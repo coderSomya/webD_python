@@ -1,4 +1,4 @@
-from flask import Flask,render_template
+from flask import Flask,render_template, jsonify
 
 app = Flask(__name__)
 
@@ -23,6 +23,10 @@ SALARIES = [
 @app.route("/")
 def hello_world():
     return render_template('home.html', salaries= SALARIES)
+
+@app.route("/api/jobs")
+def list_jobs():
+    return jsonify(SALARIES)
 
 
 print(__name__)

@@ -9,9 +9,12 @@
 <link rel="stylesheet" href="style.css">
 <body>
     <style>
-    
-   
-        ul ul{
+       
+        body{
+          margin: 0;padding: 0;box-sizing: border-box;
+        }
+        .skills{
+         
             border: 2px solid black;
         }
 
@@ -33,14 +36,23 @@
         }
         button:hover{
           cursor: pointer;
-          scale: 1.1;
+          scale: 1.04;
           transition: all 0.5s ease-in-out;
        
+        }
+        #theme{
+            background-color: aqua;
+            position: absolute;
+            right: 0;
+            border: 2px solid black;
+            border-radius: 4px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         }
         
  </style>
     <center>
         <h1>Somya's engineering cloud</h1>
+        <button id="theme">Change theme</button>
     </center>
     <h2 class="heading">Opportunities available
     </h2>
@@ -49,7 +61,7 @@
         <li class="role">Data Analyst</li>
         <p>Skills</p>
    
-        <ul>
+        <ul class="skills">
             <li>Python</li>
             <li>sklearn</li>
             <li>Pandas</li>
@@ -61,7 +73,7 @@
         </li>
 
         <p>Skills</p>
-        <ul>
+        <ul class="skills">
             <li>Competetive Programming</li>
             <li>DSA</li>
             <li>Mathematics</li>
@@ -73,7 +85,7 @@
             Frontend Engineer
         </li>
         <p>Skills</p>
-        <ul>
+        <ul class="skills">
             <li>Html, CSS, Javascript</li>
             <li>React/ Angular / Vue/ Next</li>
             <li>Django/Flask</li>
@@ -86,7 +98,7 @@
         </li>
 
   <p>Skills</p>
-        <ul>
+        <ul class="skills">
             <li>Javascript</li>
             <li>NodeJS/ PHP</li>
             <li>mySQL/mongoDB</li>
@@ -99,7 +111,7 @@
            </li>
    
      <p>Skills</p>
-           <ul>
+           <ul class="skills">
                <li>Docker</li>
                <li>Kubernetes</li>
            </ul>
@@ -110,7 +122,7 @@
            </li>
    
      <p>Skills</p>
-           <ul>
+           <ul class="skills">
                <li>Linux</li>
                <li>Python</li>
                <li>Computer Networking</li>
@@ -119,8 +131,50 @@
            </ul>
 
     </ul>
+<div>
+    <center><strong>Salaries: </strong></center>
+    <br>
+
+    {% for salary in salaries %}
+     {% include 'salary.html' %}
+    {% endfor %}
+    <hr>
+</div>
 <button>
     Contact
    </button>
+   <p style="text-align: center;">
+    Copyright &#169; Somya, 2023
+   </p>
 </body>
+
+<script>
+    var themeBtn= document.getElementById("theme");
+
+    themeBtn.addEventListener('click', changeTheme)
+
+    function changeTheme(){
+    var x= document.getElementsByTagName('body')[0];
+    var y= document.getElementsByClassName('skills');
+
+
+
+if(x.style.backgroundColor=="white")
+{
+    x.style.backgroundColor= "black"; 
+    x.style.color = "white";
+    
+    for(let i=0; i<y.length; i++)
+    y[i].style.border = "2px solid white";
+}
+
+else {
+    x.style.backgroundColor= "white"; 
+    x.style.color = "black";
+    for(let i=0; i<y.length; i++)
+    y[i].style.border = "2px solid black";
+   
+}
+    }
+</script>
 </html>

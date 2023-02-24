@@ -3,7 +3,20 @@ from flask import Flask,render_template
 app = Flask(__name__)
 
 SALARIES = [
-    "1L", "2L", "3L", "1L", "1.5"
+  {
+    "title": "Data Analyst",
+    "salary": 150000
+  },
+   {
+    "title": "Developer",
+    "salary": 120000
+  },
+   {
+    "title": "Research and developement",
+    "salary": 200000,
+    "remote": True
+  },
+
 ]
 
 

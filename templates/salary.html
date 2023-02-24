@@ -1,0 +1,54 @@
+<style>
+    .money{
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+        align-items: center;
+    }
+   .specialisation{
+    color: grey;
+   }
+
+   .apply{
+    right: 0;
+    border: 2px solid rgb(101, 51, 101);
+    border-radius: 5px;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 5px;
+   }
+
+   .apply:hover{
+    background-color: rgb(101, 51, 101);
+    color: white;
+    cursor: pointer;
+    scale: 1.02;
+   }
+
+</style>
+
+<div class="money">
+
+    <table>
+     
+        <tr>
+           <th class="specialisation"> {{salary['title']}} :</th>
+
+           <th>
+            {{salary['salary']}}
+           </th>
+          {% if 'remote' in salary %}
+(       
+<h5>Remote</h5>
+)
+{%endif %}
+        </tr>
+       
+    </table>
+    <span class="apply">Apply</span>
+
+    <br><br>
+
+</div>
+
+   
+</div>
